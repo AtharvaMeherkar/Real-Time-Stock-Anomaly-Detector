@@ -1,92 +1,111 @@
-🤖 AI-Powered Real-Time Market Anomaly Detector
-An intelligent, real-time data analysis engine that monitors cryptocurrency markets for statistical anomalies, correlates them with global news sentiment, and sends instant multi-channel alerts.
-🌟 Overview
-In the volatile, 24/7 world of cryptocurrency, critical market events can happen in the blink of an eye. This project provides a powerful solution: an automated system that not only detects unusual market activity but also helps you understand the potential reasons behind it.
+<div align="center">
 
-The application establishes a high-performance data pipeline to ingest live trade data, uses a robust statistical model to identify anomalies in both price and volume, and then enriches this data by fetching and analyzing the sentiment of related news headlines. When a significant event is confirmed, it's logged to a database and you're notified instantly via Email and SMS.
+🤖 Project Sentinel: AI Anomaly Detector
+Unleash the power of real-time data. Automatically detect critical market events, understand the "why" with AI-powered news analysis, and get instant alerts before anyone else.
+<p align="center">
+<img alt="Python" src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white"/>
+<img alt="Status" src="https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge"/>
+<a href="https://github.com/AtharvaMeherkar/Real-Time-Stock-Anomaly-Detector/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/AtharvaMeherkar/Real-Time-Stock-Anomaly-Detector?style=for-the-badge&logo=github&color=FFD700"/>
+</a>
+<a href="https://github.com/AtharvaMeherkar/Real-Time-Stock-Anomaly-Detector/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/AtharvaMeherkar/Real-Time-Stock-Anomaly-Detector?style=for-the-badge&logo=github&color=87CEEB"/>
+</a>
+</p>
 
-✨ Key Features
-⚡ Real-Time, Multi-Asset Monitoring: Utilizes asyncio and a single WebSocket to efficiently monitor multiple tickers (BTC, ETH, SOL) concurrently.
+</div>
 
-🧠 Multi-Factor Anomaly Detection: Implements a statistical Z-score model that flags anomalies only when both price and trading volume show statistically significant deviations.
+See Sentinel in Action!
+(This is where you would place a GIF of your project running)
 
-📰 AI-Powered News Correlation: Automatically fetches relevant news headlines from a global news API upon detecting an anomaly.
+<p align="center">
+<img src="https://placehold.co/800x300/121212/FFFFFF?text=Project%20Demo%20GIF" alt="Project Demo GIF" width="800"/>
+</p>
+A GIF showing the terminal detecting an anomaly, followed by a phone screen receiving the SMS alert.
 
-💬 NLP Sentiment Analysis: Uses TextBlob to perform Natural Language Processing on headlines, providing crucial context (Positive, Negative, Neutral) for market movements.
+🎯 Why This Project?
+In today's 24/7 crypto markets, information is everything. But raw data is just noise. Project Sentinel was built to cut through that noise. It's not just another data scraper—it's an intelligent agent that acts as your personal market analyst, watching multiple assets simultaneously. It uses a robust statistical model to identify events that truly matter (anomalies in both price and volume) and then does what a human analyst would: it immediately looks for a reason by scanning and analyzing the sentiment of real-world news.
 
-💾 Persistent Data Logging: All confirmed anomalies and their correlated news data are permanently stored in a local SQLite database for historical analysis.
+This project is a showcase of building a resilient, high-performance, event-driven system that fuses data from multiple domains (market streams, news APIs, NLP) into a single, actionable insight.
 
-🔔 Multi-Channel Alert System: Sends instant, detailed alert notifications via both Email (using SendGrid) and SMS (using Twilio).
+✨ Core Features
+<table align="center">
+<tr>
+<td align="center" width="200">
+<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature1.svg" width="60">
+<h3>Real-Time Engine</h3>
+<p>Blazing fast, non-blocking monitoring of multiple assets using Python's asyncio.</p>
+</td>
+<td align="center" width="200">
+<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature2.svg" width="60">
+<h3>Multi-Factor AI</h3>
+<p>Smart anomaly detection using both price and volume Z-scores to reduce false positives.</p>
+</td>
+<td align="center" width="200">
+<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature3.svg" width="60">
+<h3>News Correlation</h3>
+<p>Automatically fetches and analyzes the sentiment of news headlines to explain market events.</p>
+</td>
+<td align="center" width="200">
+<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature4.svg" width="60">
+<h3>Instant Alerts</h3>
+<p>Sends immediate notifications via both Email (SendGrid) and SMS (Twilio).</p>
+</td>
+</tr>
+</table>
 
-🏗️ System Architecture
-The application operates on a modern, event-driven architecture designed for high throughput and resilience.
+🏗️ Technology & Architecture
+The system is built on a modern, event-driven pipeline.
 
-graph TD
-    A[Finnhub WebSocket] -- Live Trade Data --> B{Asyncio Event Loop};
-    B -- New Trade Event --> C[State Manager - Dictionaries of Deques];
-    C -- Price & Volume History --> D[Statistical Engine - NumPy];
-    D -- Z-Scores --> E{Anomaly Confirmation Rule};
-    E -- Anomaly Confirmed --> F[GNews API];
-    F -- News Headline --> G[NLP Sentiment Analysis - TextBlob];
-    G -- Enriched Data --> H[SQLite Database];
-    E -- Anomaly Confirmed --> I[Alerting Subsystem];
-    I -- Dispatch Email --> J[SendGrid API];
-    I -- Dispatch SMS --> K[Twilio API];
+  [Live Market Data]──────────┐
+      (WebSocket)             │
+                              ▼
+                        [Asyncio Core]───(Multi-Factor Anomaly?)───┐
+                              │                                    │
+                              │                                    ▼
+                              └──────────[Real-Time Log]      [News API] -> [NLP]
+                                                                   │
+                                                                   ▼
+                                                          [SQLite Database] & [Alerts]
+                                                              (Email/SMS)
 
-🛠️ Tech Stack
-This project leverages a powerful combination of modern Python libraries and external APIs.
+The tech stack was chosen for performance and reliability:
 
-Core Language: Python 3.8+
+Backend: Python, asyncio, websockets
 
-Concurrency: asyncio - For non-blocking, I/O-bound operations.
+Data Science: NumPy, TextBlob
 
-Networking: websockets - For high-performance, real-time data streaming.
+Database: SQLite3
 
-Data Analysis: numpy - For lightning-fast statistical calculations.
+APIs: Finnhub, GNews, SendGrid, Twilio
 
-NLP: textblob - For simple and effective sentiment analysis.
-
-Database: sqlite3 - For lightweight, serverless, persistent data storage.
-
-Alerting APIs: sendgrid (Email) & twilio (SMS) - For reliable, professional-grade notifications.
-
-Configuration: python-dotenv - For securely managing API keys and secrets.
+Configuration: python-dotenv
 
 🚀 Getting Started
-Follow these steps to get the project up and running on your local machine.
+Ready to launch your own Sentinel? Here's how.
 
-1. Prerequisites
-Python 3.8 or newer
-
-Git
-
-2. Setup & Installation
 <details>
-<summary><strong>Click here for a step-by-step setup guide</strong></summary>
+<summary><strong>► Click here for the step-by-step setup guide</strong></summary>
 
-Clone the Repository
+1. Environment Setup
+First, clone the repository and set up your virtual environment.
 
+# Clone the project
 git clone https://github.com/AtharvaMeherkar/Real-Time-Stock-Anomaly-Detector.git
 cd Real-Time-Stock-Anomaly-Detector
 
-Create and Activate a Virtual Environment
-
-# Create the environment
+# Create and activate a virtual environment
 python -m venv .venv
+.\.venv\Scripts\activate  # On Windows
+# source .venv/bin/activate  # On macOS/Linux
 
-# Activate on Windows
-.\.venv\Scripts\activate
-
-# Activate on macOS/Linux
-# source .venv/bin/activate
-
-Install Dependencies
+2. Install Dependencies
+Install all the required libraries from the requirements.txt file.
 
 pip install -r requirements.txt
 
-(Note: You will need to create a requirements.txt file for this command to work. See section below.)
-
-Configure Your Credentials
+3. Configure Your Secrets
+This is the most important step. You'll need API keys from four services: Finnhub, GNews, SendGrid, and Twilio.
 
 Create a file named .env in the project root.
 
@@ -96,20 +115,10 @@ Fill in all your API keys and personal details.
 
 </details>
 
-3. Creating requirements.txt
-To make installation easier for others, create a requirements.txt file with the following content:
+<details>
+<summary><strong>► Click here to see the .env template</strong></summary>
 
-websockets
-numpy
-python-dotenv
-requests
-textblob
-twilio
-sendgrid
-pandas
-
-4. Configuration (.env file)
-Your .env file must be filled out with your secret keys. Use the following template:
+# .env file
 
 # --- API KEYS ---
 FINNHUB_API_KEY="PASTE_YOUR_FINNHUB_API_KEY_HERE"
@@ -126,25 +135,18 @@ TWILIO_AUTH_TOKEN="PASTE_YOUR_TWILIO_AUTH_TOKEN_HERE"
 TWILIO_PHONE_NUMBER="+1..." # Your Twilio phone number
 RECIPIENT_PHONE_NUMBER="+91..." # Your verified personal number
 
-🏃‍♂️ Usage
-1. Run the Main Analyzer
-To start monitoring the markets, run the main script from your activated virtual environment:
+</details>
+
+🏃 Usage
+1. Launch the Detector
+Activate your virtual environment and run the main script. It will connect and start monitoring 24/7.
 
 python stock_analyzer.py
 
-The script will run continuously until you stop it.
-
 2. View Logged Anomalies
-After at least one anomaly has been detected, you can view the contents of the database:
+After an anomaly has been detected, view the database contents with the reader script.
 
 python read_db.py
 
 3. Stop the Application
 To stop the main analyzer, press Ctrl+C in the terminal where it is running.
-
-🔮 Future Scope
-Interactive Web Dashboard: Build a real-time dashboard with Flask or Streamlit to visualize the data.
-
-Machine Learning Integration: Replace the static Z-score model with an unsupervised ML model (e.g., Isolation Forest) for more adaptive detection.
-
-Containerization: Package the application with Docker for easy deployment and scalability.
