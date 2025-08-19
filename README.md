@@ -15,13 +15,6 @@ Unleash the power of real-time data. Automatically detect critical market events
 
 </div>
 
-See Sentinel in Action!
-(This is where you would place a GIF of your project running)
-
-<p align="center">
-<img src="https://placehold.co/800x300/121212/FFFFFF?text=Project%20Demo%20GIF" alt="Project Demo GIF" width="800"/>
-</p>
-A GIF showing the terminal detecting an anomaly, followed by a phone screen receiving the SMS alert.
 
 🎯 Why This Project?
 In today's 24/7 crypto markets, information is everything. But raw data is just noise. Project Sentinel was built to cut through that noise. It's not just another data scraper—it's an intelligent agent that acts as your personal market analyst, watching multiple assets simultaneously. It uses a robust statistical model to identify events that truly matter (anomalies in both price and volume) and then does what a human analyst would: it immediately looks for a reason by scanning and analyzing the sentiment of real-world news.
@@ -31,23 +24,15 @@ This project is a showcase of building a resilient, high-performance, event-driv
 ✨ Core Features
 <table align="center">
 <tr>
-<td align="center" width="200">
-<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature1.svg" width="60">
 <h3>Real-Time Engine</h3>
 <p>Blazing fast, non-blocking monitoring of multiple assets using Python's asyncio.</p>
 </td>
-<td align="center" width="200">
-<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature2.svg" width="60">
 <h3>Multi-Factor AI</h3>
 <p>Smart anomaly detection using both price and volume Z-scores to reduce false positives.</p>
 </td>
-<td align="center" width="200">
-<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature3.svg" width="60">
 <h3>News Correlation</h3>
 <p>Automatically fetches and analyzes the sentiment of news headlines to explain market events.</p>
 </td>
-<td align="center" width="200">
-<img src="https://raw.githubusercontent.com/gist/AtharvaMeherkar/034b2f2b34746d00431b9d123d45388c/raw/08b982c733615456f932e650d32d3f3f3869a19d/feature4.svg" width="60">
 <h3>Instant Alerts</h3>
 <p>Sends immediate notifications via both Email (SendGrid) and SMS (Twilio).</p>
 </td>
